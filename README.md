@@ -1,7 +1,8 @@
-instacart_predictions
+!(instacart_banner)[./references/images/instacart_competition.png]
+
+Instacart Market Basket Analysis - Team Wabbit
 ==============================
 
-Instacart Market Basket Analysis
 
 # Description
 
