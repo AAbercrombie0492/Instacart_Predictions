@@ -37,6 +37,34 @@ etc.
 
 All deadlines are at 11:59 PM UTC on the corresponding day unless otherwise noted. The competition organizers reserve the right to update the contest timeline if they deem it necessary.
 
+How to contribute to this project
+------------
+This project borrows best practices from Cookie Cutter Data Science and Data Science is Software.
+The project makes use of a Makefile to automate data acquisition and munging.
+
+- https://drivendata.github.io/cookiecutter-data-science/
+- https://github.com/drivendata/data-science-is-software/tree/master/notebooks
+- http://blog.kaggle.com/2012/10/15/make-for-data-scientists/
+
+Its not dogma, but it's really helpful for collaborative projects.
+
+The file structure is pretty intuitive. Put notebooks in the notebooks folder. Refactor good code that you make in your notebooks into py files that go into the src folder.
+
+You can store your AWS credentials and other sensitive info in a .env file. Every time you run the Makefile, your ~/data/ folder will automatically sync up with a configured S3 bucket.
+
+The goal is to streamline all of your data munging modules into a `~/src/data/make_dataset.py` file that will execute all the steps in a DAG. This script can be run in the Makefile so a new team-member of whoever just has to run the Makefile to be setup and dandy for modeling.
+
+the `.gitignore` makes sure you don’t push files like `.env` or your `/data/` files to github.
+
+## Basic Git Workflow
+
+1) Fork the repo
+2) Set ‘origin’ to your forked repo.
+3) Set 'upstream' to https://github.com/AAbercrombie0492/Instacart_Predictions.git
+3) Push changes to ‘origin’
+4) When you want to share, make a pull request to sync your 'origin' to the 'upstream' branch.
+5) To get updates from 'upstream': `git fetch upstream master`
+
 Project Organization
 ------------
 
