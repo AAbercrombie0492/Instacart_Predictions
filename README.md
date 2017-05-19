@@ -50,7 +50,7 @@ Its not dogma, but it's really helpful for collaborative projects.
 
 The file structure is pretty intuitive. Put notebooks in the notebooks folder. Refactor good code that you make in your notebooks into py files that go into the src folder.
 
-You can store your AWS credentials and other sensitive info in a .env file. Every time you run the Makefile, your ~/data/ folder will automatically sync up with a configured S3 bucket.
+You can store your AWS credentials and other sensitive info in a .env file. Every time you run the Makefile, your `~/data/` folder will automatically sync up with a configured S3 bucket.
 
 The goal is to streamline all of your data munging modules into a `~/src/data/make_dataset.py` file that will execute all the steps in a DAG. This script can be run in the Makefile so a new team-member of whoever just has to run the Makefile to be setup and dandy for modeling.
 
@@ -64,6 +64,23 @@ the `.gitignore` makes sure you don’t push files like `.env` or your `/data/` 
 3) Push changes to ‘origin’
 4) When you want to share, make a pull request to sync your 'origin' to the 'upstream' branch.
 5) To get updates from 'upstream': `git fetch upstream master`
+
+## File naming conventions
+
+- For notebooks: Naming convention is a number (for ordering), the creator's initials, and a short `-` delimited description, e.g.`1.0-jqp-initial-data-exploration`.
+
+- For py files that make it to `src`, Insert the following at the top of the script.
+
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+Description of what this script does and what a reader should pay attention to.
+"""
+
+__author__ = "YOUR NAME"
+```
+
 
 Project Organization
 ------------
